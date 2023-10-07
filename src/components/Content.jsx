@@ -11,15 +11,15 @@ const Content = ({ menuOn, createNoteMode }) => {
   }, []);
 
   return (
-    <div
-      className="content-container"
+    <main
+      className="flex"
       style={{
         position: windowWidth > 500 ? "relative" : "unset",
         width: windowWidth > 500 && menuOn ? "calc(100vw - 15rem)" : "100vw",
       }}
     >
       {createNoteMode && <CreateNote />}
-    </div>
+    </main>
   );
 };
 
