@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import CreateNote from "./CreateNote";
 
-const Content = ({ menuOn, createNoteMode }) => {
+const Content = ({ menuOn, setMenuOn, setCreateNoteMode, createNoteMode }) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -18,7 +18,12 @@ const Content = ({ menuOn, createNoteMode }) => {
         width: windowWidth > 500 && menuOn ? "calc(100vw - 15rem)" : "100vw",
       }}
     >
-      {createNoteMode && <CreateNote />}
+      {createNoteMode && (
+        <CreateNote
+          setMenuOn={setMenuOn}
+          setCreateNoteMode={setCreateNoteMode}
+        />
+      )}
     </main>
   );
 };

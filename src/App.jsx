@@ -11,7 +11,12 @@ const App = () => {
     <div>
       <Header menuOn={menuOn} setMenuOn={setMenuOn} />
       <Menu menuOn={menuOn} setCreateNoteMode={setCreateNoteMode} />
-      <Content menuOn={menuOn} createNoteMode={createNoteMode} />
+      <Content
+        menuOn={menuOn}
+        setMenuOn={setMenuOn}
+        setCreateNoteMode={setCreateNoteMode}
+        createNoteMode={createNoteMode}
+      />
     </div>
   );
 };
