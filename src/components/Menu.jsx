@@ -1,13 +1,21 @@
+import Pencil from "../assets/pencil.svg?react";
+
 const Menu = ({ menuOn, setCreateNoteMode }) => {
   const handleCreateNoteMode = () => setCreateNoteMode(true);
 
   return (
-    <div className="menu" style={{ display: menuOn ? "block" : "none" }}>
+    <div
+      className="menu"
+      style={{
+        width: menuOn ? "15rem" : "0",
+        color: menuOn ? "black" : "transparent",
+      }}
+    >
       <div>
-        <h4 className="new-note" onClick={handleCreateNoteMode}>
-          New note
-        </h4>
-        <h4>note 1</h4>
+        <div className="menu-item new flex" onClick={handleCreateNoteMode}>
+          <Pencil className="icon" />
+          <h4>Add a new note</h4>
+        </div>
       </div>
     </div>
   );
