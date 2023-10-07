@@ -14,12 +14,23 @@ body {
   align-items: center;
 }
 
+.pointer {
+  cursor: pointer;
+}
+
 header {
   height: 3rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: #003459;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+    rgba(0, 0, 0, 0.1) 0px 2px 4px 0px;
+}
+
+.logo {
+  width: 2rem;
+  height: 2rem;
 }
 
 h1 {
@@ -28,49 +39,113 @@ h1 {
   font-size: 1.2rem;
 }
 
-.logo {
-  width: 2rem;
-  height: 2rem;
+.icon {
+  width: 1.7rem;
+  height: 1.7rem;
+  margin-right: 0.3rem;
 }
 
 header .icon {
   margin-right: 0.7rem;
 }
 
-.icon {
-  width: 1.7rem;
-  height: 1.7rem;
-}
-
 .menu {
-  width: 15rem;
   height: calc(100vh - 3rem);
-  background-color: white;
+  background-color: #eeeeee;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+    rgba(0, 0, 0, 0.1) 0px 2px 4px 0px;
   position: absolute;
   right: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow: hidden;
+  text-wrap: nowrap;
+  transition: width 0.3s cubic-bezier(0.4, 0, 1, 1), color 0.4s ease;
+}
+
+.menu-item {
+  justify-content: start;
+  border-radius: 4px;
+  padding: 1.25rem 0.75rem;
+  margin: 0.75rem;
+  cursor: pointer;
+  transition: background-color 0.5s ease;
+}
+
+.new {
+  padding: 0.5rem 0.75rem;
+}
+
+.menu-item:hover {
+  background-color: #e0e0e0;
 }
 
 h4 {
-  background-color: #e9e9eb;
-  border-radius: 10px;
-  padding: 1rem;
-  margin: 0.5rem;
   font-weight: 400;
-  cursor: pointer;
-  transition: background-color 0.5s linear;
 }
 
-.new-note {
-  padding: 0.5rem 1rem;
-}
-
-h4:hover {
-  background-color: #d6d6d6;
-}
-
-.content-container {
+main {
+  flex-direction: column;
   height: calc(100vh - 3rem);
+  padding: 2rem;
+  transition: width 0.3s cubic-bezier(0.4, 0, 1, 1);
+}
+
+.note {
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 12px 28px 0px,
+    rgba(0, 0, 0, 0.1) 0px 2px 4px 0px;
+  height: 27rem;
+}
+
+input,
+textarea {
+  font-family: "Roboto", sans-serif;
+  width: 100%;
+  padding: 1rem 1.5rem 0rem 1.5rem;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  margin: 0.5rem 0rem;
+}
+
+input {
+  font-size: 1.25rem;
+}
+
+textarea {
+  font-size: 1rem;
+  height: calc(100% - 5rem);
+  resize: none;
+}
+
+.button-container {
+  margin-top: 2rem;
+  width: 20rem;
+  justify-content: space-between;
+}
+
+button {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 3px;
+  border: none;
+  background-color: transparent;
+  transition: background-color 0.5s ease;
+}
+
+button:hover {
+  background-color: #e0e0e0;
+}
+
+select {
+  text-align: center;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  outline: none;
+}
+
+select:hover {
+  border-color: unset;
 }
