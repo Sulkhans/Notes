@@ -65,13 +65,14 @@ const CreateNote = ({ setMenuOn, setCreateNoteMode }) => {
           Save
         </button>
         <select onChange={handleColor}>
-          <option value="#dce0d9">Gray</option>
-          <option value="#ffadad">Red</option>
-          <option value="#ffd6a5">Orange</option>
-          <option value="#fdffb6">Yellow</option>
-          <option value="#caffbf">Green</option>
+          <option value="#e0e0e0">Gray</option>
+          <option value="#f87575">Red</option>
+          <option value="#fcac5d">Orange</option>
+          <option value="#fcf45d">Yellow</option>
+          <option value="#a7c957">Green</option>
           <option value="#a2d2ff">Blue</option>
-          <option value="#ffc6ff">Pink</option>
+          <option value="#ffb5d7">Pink</option>
+          <option value="#bdb2ff">Purple</option>
         </select>
         <button onClick={handleDiscard}>Discard</button>
       </div>
