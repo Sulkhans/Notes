@@ -64,6 +64,7 @@ header .icon {
     rgba(0, 0, 0, 0.1) 0px 2px 4px 0px;
   position: absolute;
   right: 0;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -133,6 +134,11 @@ textarea {
 
 input {
   font-size: 1.25rem;
+}
+
+input:disabled,
+textarea:disabled {
+  color: black;
 }
 
 textarea {
