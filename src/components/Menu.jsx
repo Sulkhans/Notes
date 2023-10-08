@@ -1,9 +1,13 @@
 import Pencil from "../assets/pencil.svg?react";
 import { useNotes } from "../context/Notes.context";
 
-const Menu = ({ menuOn, setCreateNoteMode }) => {
-  const handleCreateNoteMode = () => setCreateNoteMode(true);
+const Menu = ({ menuOn, setCreateNoteMode, viewNote, setViewNote }) => {
+  const handleCreateNoteMode = () => {
+    setCreateNoteMode(true);
+    setViewNote(false);
+  };
   const { notes } = useNotes();
+
   return (
     <div
       className="menu"
@@ -30,10 +34,29 @@ const Menu = ({ menuOn, setCreateNoteMode }) => {
             })
             .replace(/\//g, ".");
           return (
-            <div className="menu-item note-item flex" key={note.id}>
+            <div
+              key={note.id}
+              className="menu-item note-item flex"
+              style={{
+                backgroundColor: viewNote.id === note.id ? "#e0e0e0" : "",
+              }}
+              onClick={() => {
+                setCreateNoteMode(false);
+                setViewNote({
+                  id: note.id,
+                  title: note.title,
+                  note: note.note,
+                  color: note.color,
+                  date: note.date,
+                });
+              }}
+            >
               <div>
-                <h4>{note.title}</h4>
-                <h5>{note.note}</h5>
+                <h4>
+                  {note.title.length > 15
+                    ? note.title.slice(0, 15) + "..."
+                    : note.title}
+                </h4>
                 <h6>{date}</h6>
               </div>
               <span style={{ color: note.color }}>&#9679;</span>

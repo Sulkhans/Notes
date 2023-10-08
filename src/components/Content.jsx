@@ -1,7 +1,15 @@
 import React, { useState, useEffect } from "react";
 import CreateNote from "./CreateNote";
+import Note from "./Note";
 
-const Content = ({ menuOn, setMenuOn, setCreateNoteMode, createNoteMode }) => {
+const Content = ({
+  menuOn,
+  setMenuOn,
+  setCreateNoteMode,
+  createNoteMode,
+  viewNote,
+  setViewNote,
+}) => {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
@@ -22,6 +30,13 @@ const Content = ({ menuOn, setMenuOn, setCreateNoteMode, createNoteMode }) => {
         <CreateNote
           setMenuOn={setMenuOn}
           setCreateNoteMode={setCreateNoteMode}
+        />
+      )}
+      {viewNote.id && (
+        <Note
+          viewNote={viewNote}
+          setViewNote={setViewNote}
+          setMenuOn={setMenuOn}
         />
       )}
     </main>
