@@ -86,10 +86,15 @@ header .icon {
 
 .notes-list {
   overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .note-item {
   justify-content: space-between;
+}
+
+h3 {
+  font-size: 16px;
 }
 
 h4 {
@@ -123,6 +128,7 @@ textarea {
   outline: none;
   background-color: transparent;
   margin: 0.5rem 0rem;
+  color: black;
 }
 
 input {
@@ -166,6 +172,17 @@ select {
 
 select:hover {
   border-color: none;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #d1d1d1;
+  border-radius: 5px;
+}
+::-webkit-scrollbar-track {
+  background-color: transparent;
 }
 
 @media (max-width: 370px) {
